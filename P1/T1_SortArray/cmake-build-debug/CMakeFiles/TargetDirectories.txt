@@ -1,0 +1,3 @@
+/home/eubgt/Desktop/Data_Structure/P1/T1_SortArray/cmake-build-debug/CMakeFiles/T1_SortArray.dir
+/home/eubgt/Desktop/Data_Structure/P1/T1_SortArray/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eubgt/Desktop/Data_Structure/P1/T1_SortArray/cmake-build-debug/CMakeFiles/rebuild_cache.dir

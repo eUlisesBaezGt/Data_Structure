@@ -1,0 +1,12 @@
+# ninja log v5
+392	444	1660249490305175081	T1_SortArray	ffc19479e1f9c74f
+0	392	1660249490257178396	CMakeFiles/T1_SortArray.dir/main.cpp.o	ef8510856aa14f51
+1	385	1660249780998193084	CMakeFiles/T1_SortArray.dir/main.cpp.o	ef8510856aa14f51
+1	427	1660249781042188496	CMakeFiles/T1_SortArray.dir/Programs.cpp.o	9fef6d0cab2bd85e
+427	479	1660249781094183074	T1_SortArray	1edeb848cd81af47
+0	348	1660249824500485563	CMakeFiles/T1_SortArray.dir/main.cpp.o	ef8510856aa14f51
+0	398	1660249824548519136	CMakeFiles/T1_SortArray.dir/Programs.cpp.o	9fef6d0cab2bd85e
+398	448	1660249824600555506	T1_SortArray	1edeb848cd81af47
+1	358	1660249865408849557	CMakeFiles/T1_SortArray.dir/main.cpp.o	ef8510856aa14f51
+1	399	1660249865448869658	CMakeFiles/T1_SortArray.dir/Programs.cpp.o	9fef6d0cab2bd85e
+399	450	1660249865496893778	T1_SortArray	1edeb848cd81af47
