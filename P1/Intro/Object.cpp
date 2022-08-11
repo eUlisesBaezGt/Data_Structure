@@ -13,4 +13,3 @@ int Object::add(int n1, int n2){return n1+n2;}
 void Object::setResult(int result_ ){ this->_addition = result_ ; }
 int Object::getResult() const{return this->_addition;}
 
-
