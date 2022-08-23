@@ -1,3 +1,0 @@
-/home/eubgt/Desktop/Data_Structure/P1/Registros1/cmake-build-debug/CMakeFiles/Registros1.dir
-/home/eubgt/Desktop/Data_Structure/P1/Registros1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/eubgt/Desktop/Data_Structure/P1/Registros1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
