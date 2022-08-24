@@ -55,8 +55,8 @@ build CMakeFiles/Tarea2Regs.dir/main.cpp.o: CXX_COMPILER__Tarea2Regs_Debug /home
   OBJECT_DIR = CMakeFiles/Tarea2Regs.dir
   OBJECT_FILE_DIR = CMakeFiles/Tarea2Regs.dir
 
-build CMakeFiles/Tarea2Regs.dir/Empresa.cpp.o: CXX_COMPILER__Tarea2Regs_Debug /home/eubgt/Desktop/Data_Structure/P1/Tarea2Regs/Empresa.cpp || cmake_object_order_depends_target_Tarea2Regs
-  DEP_FILE = CMakeFiles/Tarea2Regs.dir/Empresa.cpp.o.d
+build CMakeFiles/Tarea2Regs.dir/business.cpp.o: CXX_COMPILER__Tarea2Regs_Debug /home/eubgt/Desktop/Data_Structure/P1/Tarea2Regs/business.cpp || cmake_object_order_depends_target_Tarea2Regs
+  DEP_FILE = CMakeFiles/Tarea2Regs.dir/business.cpp.o.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles/Tarea2Regs.dir
   OBJECT_FILE_DIR = CMakeFiles/Tarea2Regs.dir
@@ -69,7 +69,7 @@ build CMakeFiles/Tarea2Regs.dir/Empresa.cpp.o: CXX_COMPILER__Tarea2Regs_Debug /h
 #############################################
 # Link the executable Tarea2Regs
 
-build Tarea2Regs: CXX_EXECUTABLE_LINKER__Tarea2Regs_Debug CMakeFiles/Tarea2Regs.dir/main.cpp.o CMakeFiles/Tarea2Regs.dir/Empresa.cpp.o
+build Tarea2Regs: CXX_EXECUTABLE_LINKER__Tarea2Regs_Debug CMakeFiles/Tarea2Regs.dir/main.cpp.o CMakeFiles/Tarea2Regs.dir/business.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Tarea2Regs.dir
   POST_BUILD = :
