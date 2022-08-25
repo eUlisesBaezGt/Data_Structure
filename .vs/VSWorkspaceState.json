@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\P1",
+    "\\P1\\E1",
+    "\\P1\\Registros1"
   ],
-  "SelectedNode": "\\D:\\Users\\0241823\\Desktop\\Data_Structure",
+  "SelectedNode": "\\P1\\E1\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
