@@ -2,6 +2,7 @@
 
 #include "TwoDimArr.h"
 
+
 TwoDimArr::TwoDimArr(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
@@ -9,7 +10,6 @@ TwoDimArr::TwoDimArr(int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         *(arr + i) = new int[cols];
     }
-
 }
 
 TwoDimArr::~TwoDimArr() {
@@ -21,7 +21,8 @@ TwoDimArr::~TwoDimArr() {
 
 void TwoDimArr::nam() {
     cout << "Enter name: ";
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);
 }
 
 void TwoDimArr::show() {
@@ -32,7 +33,6 @@ void TwoDimArr::show() {
         }
         cout << endl;
     }
-
 }
 
 void TwoDimArr::sort() {
@@ -58,6 +58,4 @@ void TwoDimArr::fill() {
             *(*(arr + i) + j) = num;
         }
     }
-
 }
-

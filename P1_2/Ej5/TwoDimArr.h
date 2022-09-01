@@ -29,5 +29,4 @@ private:
     string name;
 };
 
-
 #endif //EJ5_TWODIMARR_H

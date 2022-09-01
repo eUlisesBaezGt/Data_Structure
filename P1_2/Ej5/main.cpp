@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "TwoDimArr.h"
 
 int main() {
