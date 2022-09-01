@@ -17,8 +17,9 @@ int main(){
     cout << "Rows: ";
     int rows;
     cin >> rows;
-    int **array = new int*[rows];
     
+    val = new int*[rows];
+    for(int i = 0; i<rows;i++) *(val+i) = new int[cols];
 
     do
     {
@@ -35,14 +36,21 @@ int main(){
         switch (opt)
         {
         case 1:
+            cin.ignore();
             getline(cin, name);
             break;
         case 2:
-            
+            for(int i = 0; i<rows;i++){
+                for(int j = 0; j<cols;j++){
+                    cout << "\t" << *(*(val+i)+j);
+                }
+                cout << endl;
+            }
             
             break;
         case 3:
             cout << name << "your Matrix is:" << endl;
+            
 
             
             break;
