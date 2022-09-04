@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "T3_Pointers_RegArrWArrs",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "T3_Pointers_RegArrWArrs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-T3_Pointers_RegArrWArrs-Debug-cdb5275acd8bf388d4cd.json",
+					"name" : "T3_Pointers_RegArrWArrs",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/eubgt/Desktop/Data_Structure/P1_2/T3_Pointers_RegArrWArrs/cmake-build-debug",
+		"source" : "/home/eubgt/Desktop/Data_Structure/P1_2/T3_Pointers_RegArrWArrs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
