@@ -1,62 +1,56 @@
+// Created by eubgt on 9/6/22.
+
 #include "stack.h"
 
-stack::stack()
-{
+stack::stack() {
     this->min = 0;
     this->max = size - 1;
     this->count = min - 1;
-    content = new int[size];
-    for (int i = 0; i < size; i++)
-        *(content + i) = 0;
+    content = new string[size];
+    for (int i = 0; i < size; i++) *(content + i) = "";
 }
 
-stack::~stack() = default;
+stack::~stack() { delete[] content; }
 
-void stack::push(int n)
-{
-    if (this->count >= this->max)
-        return;
-
-    *(content + this->count + 1) = n;
-    this->count++;
-
-    // count++;
-    // *(content+this->count) = n;    // content[this->count]=n;
-
-    return;
+void stack::push(string n) {
+    if (this->count >= this->max) cout << "Stack is full" << endl;
+    else {
+        count++;
+        *(content + this->count) = n;
+        cout << "Pushed!" << endl;
+    }
 }
 
-int stack::pop()
-{
-    int popped;
-    if (this->count < this->min)
-        return -1;
-
-    popped = *(content + this->count); // popped = content[count];
-    this->count--;
+string stack::pop() {
+    string popped = "";
+    if (this->count < this->min) cout << "Stack is empty" << endl;
+    else {
+        popped = *(content + this->count);
+        count--;
+        cout << "Popped!" << endl;
+    }
+    return popped;
 }
 
-void stack::show()
-{
-    cout << "STACK" << endl;
-    for (int i = max; i >= 0; i--)
-    {
-        cout << "\t" << content[i];
-        if (i == min)
-            cout << "\t ----> Min";
-        if (i == max)
-            cout << "\t ----> Max";
-        if (i == count)
-            cout << "\t ----> Count";
+void stack::show() {
+    cout << "Stack content: ";
+    if (this->count < this->min) cout << "Stack is empty" << endl;
+    else {
+        for (int i = 0; i <= this->count; i++) cout << *(content + i) << " ";
         cout << endl;
     }
     cout << endl;
 }
 
-int stack::top()
+bool stack::isEmpty() {
+    if (this->count < this->min) return true;
+    else return false;
+}
+
+string stack::top()
 {
     if (this->count < this->min)
-        return -1;
+        return "Stack is empty";
 
     return *(content + this->count);
 }
