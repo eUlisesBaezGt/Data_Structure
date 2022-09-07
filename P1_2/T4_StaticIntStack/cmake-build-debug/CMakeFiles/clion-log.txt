@@ -1,0 +1,4 @@
+/home/eubgt/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/eubgt/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/linux/ninja -G Ninja -S /home/eubgt/Desktop/Data_Structure/P1_2/T4_StaticIntStack -B /home/eubgt/Desktop/Data_Structure/P1_2/T4_StaticIntStack/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/eubgt/Desktop/Data_Structure/P1_2/T4_StaticIntStack/cmake-build-debug
