@@ -2,20 +2,22 @@
 
 using namespace std;
 
-class Stack
-{
+class Stack {
 public:
     Stack();
+
     ~Stack();
+
     void push(int);
+
     int pop();
+
     bool isEmpty();
-    void print();
+
     int topData();
 
 private:
-    struct Node
-    {
+    struct Node {
         int data;
         Node *next;
     };

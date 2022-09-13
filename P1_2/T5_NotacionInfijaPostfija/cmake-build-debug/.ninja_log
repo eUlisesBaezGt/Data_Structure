@@ -1,0 +1,20 @@
+# ninja log v5
+1	247	1663030990592626701	CMakeFiles/T5_NotacionInfijaPostfija.dir/stack.cpp.o	bd6bab8da6054e28
+1	263	1663030990608626623	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+263	307	1663030990652626407	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	247	1663031009868531302	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+247	291	1663031009912531081	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	266	1663031089100117165	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+266	308	1663031089144116926	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	251	1663031099668059430	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+251	294	1663031099712059189	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+1	234	1663031180643599628	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+234	277	1663031180687599371	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	244	1663031430290025469	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+244	287	1663031430334025175	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	232	1663031450905887085	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+232	274	1663031450949886788	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+1	246	1663031539765279049	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+246	288	1663031539805278771	T5_NotacionInfijaPostfija	7154bbbb9ae478a7
+0	233	1663031558949145523	CMakeFiles/T5_NotacionInfijaPostfija.dir/Source.cpp.o	8aaa399e137a69c5
+233	276	1663031558989145244	T5_NotacionInfijaPostfija	7154bbbb9ae478a7

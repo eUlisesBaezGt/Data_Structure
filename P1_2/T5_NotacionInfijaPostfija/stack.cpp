@@ -1,37 +1,29 @@
 #include "stack.h"
 
-Stack::Stack()
-{
-    top = NULL;
+Stack::Stack() {
+    top = nullptr;
 }
 
-Stack::~Stack()
-{
-    while (top != NULL)
-    {
+Stack::~Stack() {
+    while (top != nullptr) {
         Node *temp = top;
         top = top->next;
         delete temp;
     }
 }
 
-void Stack::push(int x)
-{
+void Stack::push(int x) {
     Node *temp = new Node;
     temp->data = x;
     temp->next = top;
     top = temp;
 }
 
-int Stack::pop()
-{
-    if (top == NULL)
-    {
+int Stack::pop() {
+    if (top == nullptr) {
         cout << "Stack is empty" << endl;
         return -1;
-    }
-    else
-    {
+    } else {
         Node *temp = top;
         top = top->next;
         int x = temp->data;
@@ -40,31 +32,15 @@ int Stack::pop()
     }
 }
 
-bool Stack::isEmpty()
-{
-    return top == NULL;
+bool Stack::isEmpty() {
+    return top == nullptr;
 }
 
-void Stack::print()
-{
-    Node *temp = top;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
-
-int Stack::topData()
-{
-    if (top == NULL)
-    {
+int Stack::topData() {
+    if (top == nullptr) {
         cout << "Stack is empty" << endl;
         return -1;
-    }
-    else
-    {
+    } else {
         return top->data;
     }
 }
