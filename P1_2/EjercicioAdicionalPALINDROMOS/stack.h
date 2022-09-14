@@ -10,7 +10,6 @@ public:
     void push(char);
     char pop();
     bool isEmpty();
-    void print();
 
 private:
     struct Node

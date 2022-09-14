@@ -43,14 +43,3 @@ bool Stack::isEmpty()
 {
     return top == nullptr;
 }
-
-void Stack::print()
-{
-    Node *temp = top;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
