@@ -7,7 +7,7 @@ int main()
     Stack stack;
     string word;
     cout << "Enter a word: ";
-    cin >> word;
+    cin >> word
     for (int i = 0; i < word.length(); i++)
     {
         stack.push(word[i]);
