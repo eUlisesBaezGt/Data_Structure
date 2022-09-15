@@ -3,8 +3,20 @@
         "ostream": "cpp",
         "iostream": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
     "errorLens.statusBarMessageEnabled": true,
     "errorLens.statusBarIconsEnabled": true,
-    "errorLens.statusBarColorsEnabled": true
+    "errorLens.statusBarColorsEnabled": true,
+    "editor.lightbulb.enabled": true,
+
+    "workbench.colorCustomizations": {
+        /* error squiggles */
+        "editorError.foreground": "#e21616",
+      
+        /* warning squggles */
+        "editorWarning.foreground": "#ffc400",
+      
+        /* info squiggles */
+        "editorInfo.foreground": "#35ffab"
+      }
 }
