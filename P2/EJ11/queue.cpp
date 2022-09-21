@@ -3,16 +3,20 @@
 Queue::Queue()
 {
     this->top = -1;
-    this->max = 99;
+    this->max = 6;
     this->min = 0;
     this->head = "";
+    for (int i = 0; i < this->max; i++)
+    {
+        this->data[i] = "";
+    }
 }
 
 Queue::~Queue() = default;
 
 void Queue::enqueue(string value)
 {
-    if (this->top == 99)
+    if (this->top == 6)
     {
         cout << "Queue is full" << endl;
         return;
@@ -51,8 +55,7 @@ void Queue::print()
     cout << endl;
 }
 
-void Queue::show_parameters()
+int Queue::size()
 {
-    cout << "TOP: " << this->top << endl;
-    cout << "MAX: " << this->max << endl;
+    return this->top + 1;
 }
