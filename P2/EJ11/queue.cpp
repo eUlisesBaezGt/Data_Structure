@@ -16,7 +16,7 @@ Queue::~Queue() = default;
 
 void Queue::enqueue(string value)
 {
-    if (this->top == 6)
+    if (this->top == 5)
     {
         cout << "Queue is full" << endl;
         return;
