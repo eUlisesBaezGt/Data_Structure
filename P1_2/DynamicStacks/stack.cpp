@@ -1,70 +1,64 @@
 #include "stack.h"
 
-Stack::Stack()
+stack::stack()
 {
-    top = NULL;
+	top_ = nullptr;
 }
 
-Stack::~Stack()
+stack::~stack()
 {
-    while (top != NULL)
-    {
-        Node *temp = top;
-        top = top->next;
-        delete temp;
-    }
+	while (top_ != nullptr)
+	{
+		const node* temp = top_;
+		top_ = top_->next;
+		delete temp;
+	}
 }
 
-void Stack::push(int x)
+void stack::push(int x)
 {
-    Node *temp = new Node;
-    temp->data = x;
-    temp->next = top;
-    top = temp;
+	const auto temp = new node;
+	temp->data = x;
+	temp->next = top_;
+	top_ = temp;
 }
 
-int Stack::pop()
+int stack::pop()
 {
-    if (top == NULL)
-    {
-        cout << "Stack is empty" << endl;
-        return -1;
-    }
-    else
-    {
-        Node *temp = top;
-        top = top->next;
-        int x = temp->data;
-        delete temp;
-        return x;
-    }
+	if (top_ == nullptr)
+	{
+		cout << "Stack is empty" << endl;
+		return -1;
+	}
+	const node* temp = top_;
+	top_ = top_->next;
+	const int x = temp->data;
+	delete temp;
+	return x;
 }
 
-bool Stack::isEmpty()
+bool stack::is_empty() const
 {
-    return top == NULL;
+	return top_ == nullptr;
 }
 
-void Stack::print()
+void stack::print() const
 {
-    Node *temp = top;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
+	const node* temp = top_;
+	while (temp != nullptr)
+	{
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
 }
 
-int Stack::topData()
+int stack::top_data() const
 {
-    if (top == NULL)
-    {
-        cout << "Stack is empty" << endl;
-        return -1;
-    }
-    else
-    {
-        return top->data;
-    }
+	if (top_ == nullptr)
+	{
+		cout << "Stack is empty" << endl;
+		return -1;
+	}
+	return top_->data;
 }

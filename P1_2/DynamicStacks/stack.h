@@ -1,23 +1,25 @@
+#pragma once
 #include <iostream>
 
 using namespace std;
 
-class Stack
+class stack
 {
 public:
-    Stack();
-    ~Stack();
-    void push(int);
-    int pop();
-    bool isEmpty();
-    void print();
-    int topData();
+	stack();
+	~stack();
+	void push(int);
+	int pop();
+	bool is_empty() const;
+	void print() const;
+	int top_data() const;
 
 private:
-    struct Node
-    {
-        int data;
-        Node *next;
-    };
-    Node *top;
+	struct node
+	{
+		int data;
+		node* next;
+	};
+
+	node* top_;
 };
