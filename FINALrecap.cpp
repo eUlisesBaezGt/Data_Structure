@@ -418,3 +418,44 @@ EXTRAER INICIO
 
 // ANCHURA: se visitan y marcan los nodos adyacentes  y se continua recursivamente a lo ancho.
 // Iterativo con fila/cola
+
+///////////////////////////////////////////////////
+// Define con precisión qué es una “Estructura de Datos”.
+// Permiten organizar la información de manera eficiente, y definitiva diseñar la solución correcta para un determinado problema.
+// A través de una colección de valores relacionados entre ellos y funciones y operaciones que se pueden aplicar sobre los datos.
+
+// Explica a qué se refiere la aritmética de apuntadores.
+// Apuntador: variable que almacena la dirección de memoria de una variable (no su valor).
+// Aritmética de apuntadores: operaciones que les hacemos a los apuntadores. 
+// A través de la suma y resta de constantes podemos ir cambiando de localidad. Al sumar 1, se obtiene la siguiente localidad de memoria. 
+// Es importante tener en cuenta que siempre es suma y resta de constante, nunca apuntadores.
+
+// Menciona en que consiste la Implementación Estática y en que consiste la Implementación Dinámica de una Pila
+// En la implementación estática: utilizamos arreglos, en los que insertamos/extraemos por solo uno de los 2 extremos. Los elementos están en localidades contiguas por lo que es más sencillo acceder a cada uno de ellos. Están limitados a un tamaño fijo.
+// En la implementación dinámica: siguiendo con la conceptualización principal de la pila, ahora utilizamos listas ligadas, usamos apuntadores para conectar/vincular cada una de las direcciones de memoria con la anterior (si lo vemos desde arriba hacia abajo/izquierda a derecha) o siguiente (si lo conceptualizamos de (derecha a izquierda). Podemos utilizar una estructura nodo para completar y facilitar el acceso de cada uno de los elementos. No tenemos límite de tamaño.
+
+// Menciona y explica el esquema de operación de una Cola.
+// Las colas son una estructura de datos lineal, homogénea y finita que tiene el esquema FIFO, que significa First In, First Out, es decir, el primer elemento que ingresa es el último que sale. Realizamos inserción por el final y extraemos por el inicio. EJEMPLO: cola de banco, cola de impresión (en el orden en el que se llega, es el orden que se atiende).
+
+// Explica a qué se le llama Cola Ligada, sus características y como opera.
+// Cuando no es de la forma consecutiva, es decir, no se cuentan con localidades de memoria consecutiva, usamos las colas ligadas o dinámicas. Su característica es que empleamos la estructura nodo donde cada elemento de la cola guarda su dato respectivo y además guarda la dirección donde se localiza el siguiente elemento (a través de un puntero), a excepción del último, que como es el final, el dato de dirección es nulo. 
+
+// Describe ampliamente la estructura de datos Lista y menciona las operaciones asociadas a la misma.
+// Una lista es una estructura de datos línea, fundamental, homogénea y finita. Donde cada uno de los elementos se llama Nodo. Y las operaciones que podemos hacer son: 1) Insertar elemento (ya sea al inicio, final o intermedio), 2) Extraer elemento (de igual manera en cualquier posición), recorrer elementos y buscar algún elemento en la lista. En esta estructura de datos, no tenemos restricciones (posición) para agregar nuevos datos y eliminar los existentes. 
+// Podemos implementar listas enlazadas, es decir que no están ubicadas en localidades contiguas,  para información que cambia de manera frecuente. Para las listas enlazadas tenemos dos campos en cada nodo, 1) información, 2) ubicación del nodo siguiente.
+
+
+// Define el algoritmo para realizar una de las operaciones asociadas a las listas, la que tú elijas, indicando también a qué tipo de lista aplica dicho algoritmo.
+// Para las listas enlazadas: 
+// INSERTAR INTERMEDIO:  (asumiendo que el nodo a insertar no va en el inicio ni el final, existen ya nodos e insertaremos entre esos) 
+// 1) Ubicar la posición donde debemos insertar.
+// 2) Crear el nuevo nodo.
+// 3) Completar la información del nuevo nodo.
+// 4) Conectar el nodo anterior al nuevo nodo a través del campo siguiente del nodo anterior.
+// 5) Conectar el nodo siguiente al nuevo nodo a través del campo siguiente del nodo nuevo.
+
+// EXTRAER INTERMEDIO:  (asumiendo que el nodo a buscar no es ni el inicio ni el final, existen ya nodos) 
+// 1) Localizar el nodo a eliminar.
+// 2) Guardar información a extraer.
+// 3) Actualizar los enlaces: el enlace del nodo previo, ahora apuntará al nodo siguiente del que se extrajo (analogía de un puente donde saltamos el medio y usamos los extremos como postes). 
+// 4) Eliminar el nodo extraído. 
