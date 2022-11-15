@@ -1,6 +1,6 @@
 #include <iostream>
-#include "AdyList.h"
 using namespace std;
+#include "AdyList.h"
 
 ady_list::ady_list()
 {
@@ -34,28 +34,41 @@ int ady_list::add_node(const char value)
 	return -1;
 }
 
-int ady_list::add_edge(char org, char dest, int weight)
+int ady_list::add_edge(const char org, const char dest, const int weight)
 {
-	int org_exists, dest_exists, ady_exists;
 	node *org_pos, *dest_pos;
 	edge* ady_pos;
 
 	if (!this->head_) // EMPTY GRAPH. EDGE NOT INSERTED
 		return -1;
 
-	org_exists = search_node(org, org_pos);
-	dest_exists = search_node(dest, dest_pos);
+	this->ady_ = new edge; // Create a new edge
+	this->ady_->nom = dest;
+	this->ady_->weight = weight;
+	this->ady_->next = nullptr;
 
-	if (org_exists == -1 || dest_exists == -1) // NODES DOESN'T EXISTS. EDGE NOT INSERTED
+	const int org_exists = search_node(org, org_pos);
+	const int dest_exists = search_node(dest, dest_pos);
+
+	if (org_exists == -1 || dest_exists == -1) // NODES DOESN'T EXISTS. 
 		return -1;
 
-	if(!org_pos->next) // EMPTY EDGES LIST
+	if (!org_pos->next) // NODE EXISTS BUT NO ADJACENT NODES
 	{
-		ady_pos = new edge;
-		this->ady_->dest = dest;
+		org_pos->next = ady_;
 		return 0;
 	}
 
+	const int ady_exists = search_edge(org_pos, dest, ady_pos);
+
+	if (ady_exists == -1) // ADJACENT NODE DOESN'T EXISTS. INSERTED
+	{
+		ady_pos->next = ady_;
+		ady_->next_node = dest_pos;
+		return 0;
+	}
+	delete ady_; // ADJACENT NODE EXISTS. NOT INSERTED, MEMORY FREED
+	return -2;
 }
 
 void ady_list::show_full()
@@ -79,14 +92,19 @@ void ady_list::show_full()
 
 	cout << "\nEdge list:\n" << endl;
 	this->aux_ = this->head_;
-	cout << "\t" << this->aux_->nom << " => ";
-	this->aux_ady_ = this->aux_->next;
-	while (this->aux_ady_)
+	do
 	{
-		cout << this->aux_ady_->nom << "-" << this->aux_ady_->weight << " -> ";
-		this->aux_ady_ = this->aux_ady_->next;
+		cout << "\t" << this->aux_->nom << " -> ";
+		this->aux_ady_ = this->aux_->next;
+		while (aux_ady_)
+		{
+			cout << aux_ady_->nom << "-" << aux_ady_->weight << " -> ";
+			aux_ady_ = aux_ady_->next;
+		}
+		cout << "NULL" << endl;
+		this->aux_ = this->aux_->next_node;
 	}
-	cout << "NULL" << endl;
+	while (this->aux_);
 }
 
 int ady_list::search_node(char name, node*& pos)
@@ -108,7 +126,7 @@ int ady_list::search_node(char name, node*& pos)
 
 int ady_list::search_edge(node* org, char des, edge*& pos)
 {
-	if (!org->next) // NO ADYACENT NODES
+	if (!org->next) // NO ADJACENT NODES
 		return -1;
 	this->aux_ady_ = org->next;
 	do
