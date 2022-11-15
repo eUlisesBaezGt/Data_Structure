@@ -1,199 +1,191 @@
-#include <iostream>
 #include "BinaryTree.h"
-
+#include <iostream>
 using namespace std;
 
 BinaryTree::BinaryTree()
 {
 	root_ = nullptr;
+	temp_ = nullptr;
+	aux_ = nullptr;
 }
 
 BinaryTree::~BinaryTree() = default;
-
-void BinaryTree::create_tree(const int value)
-{
-	temp_ = new node;
-	temp_->data = value;
-	temp_->left = nullptr;
-	temp_->right = nullptr;
-}
 
 node* BinaryTree::get_root() const
 {
 	return root_;
 }
 
-void BinaryTree::insert(node* value)
+void BinaryTree::create_tree(int num)
 {
-	if (root_ == nullptr)
+	temp_ = new node;
+	temp_->data = num;
+	temp_->left = nullptr;
+	temp_->right = nullptr;
+}
+
+void BinaryTree::insert(node* start)
+{
+	if (!root_)
 	{
 		root_ = temp_;
-		cout << "Root Node was Added" << endl;
+		cout << "\tROOT INSERTED" << endl;
 		return;
 	}
-	if (temp_->data < value->data)
+	if (temp_->data < start->data) // INSERTS ON LEFT
 	{
-		if (value->left == nullptr)
+		if (start->left == nullptr)
 		{
-			value->left = temp_;
-			cout << "Node was Added to the Left of ----> " << value->data << endl;
+			start->left = temp_;
+			cout << "\tInserted at left of -> " << start->data << endl;
 			return;
 		}
-		insert(value->left);
+		insert(start->left);
 		return;
 	}
-	if (temp_->data > value->data)
+	if (temp_->data > start->data) // INSERTS ON RIGHT
 	{
-		if (value->right == nullptr)
+		if (start->right == nullptr)
 		{
-			value->right = temp_;
-			cout << "Node was Added to the Right of ----> " << value->data << endl;
+			start->right = temp_;
+			cout << "\tInserted at right of -> " << start->data << endl;
 			return;
 		}
-		insert(value->right);
+		insert(start->right);
 		return;
 	}
-	if (temp_->data == value->data)
-	{
-		cout << "Node already exists" << endl;
-	}
+	// ALREADY EXISTS, NOT INSERTED
+	cout << "\t" << temp_->data << " already exists" << endl;
+	delete temp_;
 }
 
-void BinaryTree::inorder(const node* value)
+void BinaryTree::inorder(const node* start)
 {
-	if (root_ == nullptr)
+	if (!root_)
 	{
 		cout << "Tree is empty" << endl;
 		return;
 	}
-	if (value->left != nullptr)
-	{
-		inorder(value->left);
-	}
-	cout << value->data << " ";
-	if (value->right != nullptr)
-	{
-		inorder(value->right);
-	}
+	if (start->left != nullptr) inorder(start->left);
+	cout << "\t" << start->data;
+	if (start->right != nullptr) inorder(start->right);
 }
 
-void BinaryTree::preorder(const node* value)
+void BinaryTree::preorder(const node* start)
 {
-	if (root_ == nullptr)
+	if (!root_)
 	{
 		cout << "Tree is empty" << endl;
 		return;
 	}
-	cout << value->data << " ";
-	if (value->left != nullptr)
-	{
-		preorder(value->left);
-	}
-	if (value->right != nullptr)
-	{
-		preorder(value->right);
-	}
+	cout << "\t" << start->data;
+	if (start->left != nullptr) preorder(start->left);
+	if (start->right != nullptr) preorder(start->right);
 }
 
-void BinaryTree::postorder(const node* value)
+void BinaryTree::postorder(const node* start)
 {
-	if (root_ == nullptr)
+	if (!root_)
 	{
 		cout << "Tree is empty" << endl;
 		return;
 	}
-	if (value->left != nullptr)
-	{
-		postorder(value->left);
-	}
-	if (value->right != nullptr)
-	{
-		postorder(value->right);
-	}
-	cout << value->data << " ";
+	if (start->left != nullptr) postorder(start->left);
+	if (start->right != nullptr) postorder(start->right);
+	cout << "\t" << start->data;
 }
 
-void BinaryTree::extract(node* previous, node* root, const int value, const string& side)
+void BinaryTree::extract(node* father, node* start, const int value, const string side)
 {
-	if (root == nullptr)
+	if (start == nullptr) // EMPTY TREE
 	{
-		cout << "Tree is empty" << endl;
+		cout << "Value not found in tree" << endl;
 		return;
 	}
-	if (root->data == value)
+	if (value < start->data) // SEARCH ON LEFT
 	{
-		if (root->left == nullptr && root->right == nullptr)
-		{
-			if (side == "left")
-			{
-				previous->left = nullptr;
-			}
-			else
-			{
-				previous->right = nullptr;
-			}
-			delete root;
-			cout << "Node was deleted" << endl;
-			return;
-		}
-		if (root->left == nullptr && root->right != nullptr)
-		{
-			if (side == "left")
-			{
-				previous->left = root->right;
-			}
-			else
-			{
-				previous->right = root->right;
-			}
-			delete root;
-			cout << "Node was deleted" << endl;
-			return;
-		}
-		if (root->left != nullptr && root->right == nullptr)
-		{
-			if (side == "left")
-			{
-				previous->left = root->left;
-			}
-			else
-			{
-				previous->right = root->left;
-			}
-			delete root;
-			cout << "Node was deleted" << endl;
-			return;
-		}
-		if (root->left != nullptr && root->right != nullptr)
-		{
-			const node* temp = root->right;
-			if (temp->left == nullptr && temp->right == nullptr)
-			{
-				root->data = temp->data;
-				root->right = nullptr;
-				delete temp;
-				cout << "Node was deleted" << endl;
-				return;
-			}
-			if (temp->left != nullptr)
-			{
-				while (temp->left != nullptr)
-				{
-					temp = temp->left;
-				}
-				root->data = temp->data;
-				extract(root, root->right, temp->data, "right");
-				return;
-			}
-		}
-	}
-	if (root->data > value)
-	{
-		extract(root, root->left, value, "left");
+		extract(start, start->left, value, "left");
 		return;
 	}
-	if (root->data < value)
+	if (value > start->data) // SEARCH ON RIGHT
 	{
-		extract(root, root->right, value, "right");
+		extract(start, start->right, value, "right");
+		return;
+	}
+	if (start->left == nullptr && start->right == nullptr) // CASE WHERE NOT CHILD
+	{
+		cout << "\t(C1) Extracted " << start->data << endl << endl;
+		if (side == "left")
+			father->left = nullptr;
+		if (side == "right")
+			father->right = nullptr;
+		if (root_ == start)
+			root_ = nullptr;
+
+		delete start;
+		return;
+	}
+
+	if (start->left == nullptr) // CASE 2.1: RIGHT CHILD
+	{
+		if (side == "left")
+			father->left = start->right;
+		if (side == "right")
+			father->right = start->right;
+		cout << "\t(C2.1) Extracted " << start->data << endl << endl;
+		if (root_ == start)
+			root_ = start->right;
+		delete start;
+		return;
+	}
+	if (start->right == nullptr) // CASE 2.2: LEFT CHILD
+	{
+		if (side == "left")
+			father->left = start->left;
+		if (side == "right")
+			father->right = start->left;
+		cout << "\t(C2.2) Extracted " << start->data << endl << endl;
+		if (root_ == start)
+			root_ = start->right;
+		delete start;
+		return;
+	}
+	root_link_ = "left";
+	exchange(start, start, start->left, "left"); // CASE 3: BOTH CHILD
+}
+
+void BinaryTree::exchange(node* found, node* current, node* next, const string side)
+{
+	int aux;
+	if (side == "left") // LEFT SIDE
+	{
+		if (next->right == nullptr) // IS THE RIGHT-EST
+		{
+			cout << "\t(C3) Changed: " << found->data << " for " << next->data << endl;
+			aux = found->data;
+			found->data = next->data;
+			next->data = aux;
+			extract(current, next, next->data, root_link_);
+			return;
+		}
+		// CONTINUE MOVING TO RIGHT
+		root_link_ = "right";
+		exchange(found, next, next->right, "left");
+		return;
+	}
+	if (side == "right") // RIGHT SIDE
+	{
+		if (next->left == nullptr) // IS THE LEFT-EST
+		{
+			cout << "\t(C3) Changed: " << found->data << " for " << next->data << endl;
+			aux = found->data;
+			found->data = next->data;
+			next->data = aux;
+			extract(current, next, next->data, root_link_);
+			return;
+		}
+		// CONTINUE MOVING TO LEFT
+		root_link_ = "left";
+		exchange(found, next, next->left, "der");
 	}
 }

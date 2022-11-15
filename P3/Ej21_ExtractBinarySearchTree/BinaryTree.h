@@ -20,8 +20,11 @@ public:
 	void inorder(const node*);
 	void preorder(const node*);
 	void postorder(const node*);
-	static void extract(node*, node*, int, const string&);
+	void extract(node*, node*, int, string);
+	void exchange(node*, node*, node*, string);
+
 
 private:
-	node *root_{}, *temp_{};
+	node *root_{}, *temp_{}, *aux_{};
+	string root_link_{};
 };
